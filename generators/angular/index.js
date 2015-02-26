@@ -7,8 +7,10 @@ var appPath    = path.join(process.cwd(), 'app');
 var chalk      = require('chalk');
 
 module.exports = generators.Base.extend({
-  constructor: function() {
+  constructor: function(args, options) {
     generators.Base.apply(this, arguments);
+
+    this.extraDeps = options.extraDeps;
   },
 
   configuring: {
@@ -33,6 +35,14 @@ module.exports = generators.Base.extend({
     this.log('Installing dependencies:');
     this.log(chalk.yellow('======================================='));
     this.installDependencies();
+  },
+
+  installExtraDeps: function() {
+    if (this.extraDeps.length) {
+      for (var i=0; i < this.extraDeps.length; i++) {
+        this.bowerInstall([this.extraDeps[i]], {'save': true});
+      }
+    }
   }
 
 });
