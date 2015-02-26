@@ -10,7 +10,9 @@ module.exports = generators.Base.extend({
   constructor: function(args, options) {
     generators.Base.apply(this, arguments);
 
-    this.extraDeps = options.extraDeps;
+    this.appName     = options.appName;
+    this.projectType = options.projectType;
+    this.extraDeps   = options.extraDeps;
   },
 
   configuring: {
@@ -30,19 +32,40 @@ module.exports = generators.Base.extend({
     }
   },
 
-  install: function() {
-    this.log(chalk.yellow('\n======================================='));
-    this.log('Installing dependencies:');
-    this.log(chalk.yellow('======================================='));
-    this.installDependencies();
-  },
+  install: {
+    installDeps: function() {
+      this.log(chalk.yellow('\n======================================='));
+      this.log('Installing dependencies:');
+      this.log(chalk.yellow('======================================='));
+      this.installDependencies();
+    },
 
-  installExtraDeps: function() {
-    if (this.extraDeps.length) {
-      for (var i=0; i < this.extraDeps.length; i++) {
-        this.bowerInstall([this.extraDeps[i]], {'save': true});
+    installExtraDeps: function() {
+      if (this.extraDeps.length) {
+        for (var i=0; i < this.extraDeps.length; i++) {
+          this.bowerInstall([this.extraDeps[i]], {'save': true});
+        }
       }
     }
+  },
+
+  end: function() {
+    this.log(chalk.yellow('\n======================================='));
+    this.log('Output:');
+    this.log(chalk.yellow('=======================================\n'));
+
+    this.log(chalk.yellow('> ') + chalk.white('Project name: ') + chalk.yellow(this.appName));
+    this.log(chalk.yellow('> ') + chalk.white('Framework: ')    + chalk.yellow(this.projectType));
+
+    if (this.extraDeps.length) {
+      this.log(chalk.yellow('> ') + chalk.white('Extra deps: '));
+      for (var i=0; i < this.extraDeps.length; i++) {
+        this.log(chalk.yellow('  - ') + chalk.yellow(this.extraDeps[i]));
+      }
+    }
+
+    this.log(chalk.yellow('\n=======================================\n'));
+    this.log(chalk.bgGreen(chalk.black(' Finished ')));
   }
 
 });
