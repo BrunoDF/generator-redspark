@@ -1,0 +1,28 @@
+{
+  "name": "generator-redspark",
+  "version": "0.1.0",
+  "description": "A front-end generator for AngularJS or Backbone.js based on features reuse",
+  "homepage": "",
+  "bugs": "",
+  "author": [{
+    "name": "Bruno Fachine",
+    "email": "bdfachine@gmail.com",
+    "url": "https://github.com/BrunoDF"
+  },
+  {
+    "name": "Carlos Henrique da Silva",
+    "email": "carloshpds@gmail.com",
+    "url": "https://github.com/carloshpds"
+  }],
+  "keywords": [
+    "yeoman-generator",
+    "angularjs",
+    "backbone",
+    "features",
+    "ng-features"
+  ],
+  "dependencies": {
+    "chalk": "^1.0.0",
+    "yeoman-generator": "^0.18.9"
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "vendors" : {
+    "scripts"      : "vendors/**/*.js",
+
+    "sass": {
+      "sourceFiles"  : "vendors/**/*.{sass, scss}",
+      "mainSassFile" : "vendors/vendors.sass"
+     },
+
+    "css" : {
+      "mainCssFileName" : "vendors",
+      "sourceFiles": "vendors/**/*.css" 
+    } 
+      
+  },
+
+  "source" : {
+    "coffee": {
+      "sourceFiles" : ["src/**/*.coffee"]
+    },
+
+    "sass": {
+      "sourceFiles" : "src/**/*.{sass, scss}",
+      "mainSassFile": "src/main/styles/app.sass"
+    },
+
+    "css" : {
+      "mainCssFileName" : "app"
+    },
+
+    "html": {
+      "sourceFiles" : ["src/**/*.html", "!src/**/*.js.html", "!src/**/index.html"]
+    },
+
+    "img":{
+      "sourceFiles" : "src/**/img/**/*.*"
+    },
+
+    "resourcesFiles": "src/main/resources/**/*",
+    
+    "indexFile": "src/main/index.html"
+    
+  },
+
+
+  "dev" : {
+    "directory"           : "builds/dev/",
+    "jsDirectory"         : "builds/dev/scripts/",
+    "cssDirectory"        : "builds/dev/styles/",
+    "htmlDirectory"       : "builds/dev/views/",
+    "imgDirectory"        : "builds/dev/img/",
+    "indexFile"           : "builds/dev/index.html",
+    "libsDirectory"       : "builds/dev/libs/",
+    "resourcesDirectory"  : "builds/dev/resources/",
+    "resourcesFiles"      : ["builds/dev/resources/**/*", "!builds/dev/resources/include-source-list"],
+    "files"              : ["builds/dev/scripts/**/*", "builds/dev/styles/**/*", "builds/dev/views/**/*", "builds/dev/img/**/*", "builds/dev/index.html"],
+    "vendorsCssFile"     : "builds/dev/styles/vendors.css",
+    "jsFiles"            : "builds/dev/scripts/**/*",
+    "cssFiles"           : "builds/dev/styles/**/*",
+
+    "htmlFiles"          : "builds/dev/views/**/*",
+    "imgFiles"           : "builds/dev/img/**/*"
+     
+  },
+
+
+  "release" : {
+    "directory"           : "builds/release/",
+    "indexFile"           : "builds/release/index.html",
+    "htmlDirectory"       : "builds/release/views/",
+    "htmlFiles"           : "builds/release/views/**/*",
+    "cssDirectory"        : "builds/release/styles/",
+    "cssFiles"            : "builds/release/styles/**/*",
+    "jsDirectory"         : "builds/release/scripts/",
+    "jsFiles"             : "builds/release/scripts/**/*",
+    "imgDirectory"        : "builds/release/img/",
+    "imgFiles"            : "builds/release/img/**/*",
+    "resourcesDirectory"  : "builds/release/resources/",
+    "resourcesFiles"      : ["builds/release/resources/**/*", "!builds/release/resources/include-source-list"]
+  },
+
+  
+  "spec" : {
+    "js" : {
+      "sourceFiles" : [
+        "builds/dev/libs/jquery/jquery.js",
+        "builds/dev/libs/angular/angular.js",
+        "builds/dev/libs/underscore/underscore.js",
+        "builds/dev/libs/angular-ui-router/release/angular-ui-router.js",
+        "builds/dev/libs/angular-mocks/angular-mocks.js",
+        "builds/dev/libs/angular-sanitize/angular-sanitize.js",
+        "builds/dev/libs/angular-bootstrap/ui-bootstrap-tpls.js",
+        "builds/dev/libs/underscore-string/underscore-string.min.js",
+        "builds/dev/libs/momentjs/min/moment-with-langs.js",
+        "builds/dev/libs/quick-ng-repeat/quick-ng-repeat.js",
+        "builds/dev/scripts/main/scripts/app.js",
+        "builds/dev/scripts/components/**/*.js",
+        "builds/dev/scripts/features/**/*.js",
+        "builds/dev/scripts/main/scripts/**/*.js",
+        "builds/dev/views/**/*.html",
+        "builds/dev/scripts/**/specs/**/*.js",
+        "builds/dev/scripts/main/specs/utils/**/*.js"
+      ]
+    }
+  },
+
+
+  "bowerDirectory" : "bower_components/**/*"
+
+    
+}
