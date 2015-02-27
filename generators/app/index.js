@@ -35,7 +35,7 @@ module.exports = generators.Base.extend({
       this.prompt({
         type    : 'input',
         name    : 'appName',
-        message : "What's the project name",
+        message : "What's the project name?",
         default : this.appname
       }, function (result) {
         this.log('Project name: ' + chalk.bgCyan(chalk.black(' ' + result.appName + ' ')) + '\n');
@@ -50,7 +50,7 @@ module.exports = generators.Base.extend({
       this.prompt({
         type    : 'list',
         name    : 'projectType',
-        message : 'What framework will you use',
+        message : 'What framework will you use?',
         choices : frameWorks,
         default : 0,
         store   : true
@@ -67,7 +67,7 @@ module.exports = generators.Base.extend({
       this.prompt({
         type    : 'checkbox',
         name    : 'extraDeps',
-        message : 'Need any of the deps below',
+        message : 'Need any of the deps below?',
         choices : extraDeps,
         default : 0,
         store   : true

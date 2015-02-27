@@ -27,7 +27,7 @@ module.exports = generators.Base.extend({
     },
 
     copyFiles: function() {
-      this.log('Criando estrutura em:\n' + this.destinationRoot());
+      this.log('Building structure in:\n' + this.destinationRoot());
       this.directory('', '');
     }
   },
